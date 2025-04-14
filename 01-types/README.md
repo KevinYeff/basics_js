@@ -150,3 +150,175 @@ types with typeof.
 3. Understand and practice using === null instead of typeof nll === 'object'
 for reliable null checks.
 
+### :speech_balloon: 5. Comments: Best Practices
+
+Comments play a crucial role in making code more understandable and 
+maintainable. In JavaScript, there are two primary types of comments that serve
+different purposes.
+
+#### Key Points:
+
+- **Block Comments (/** ... */):** 
+  - Used for documentation and descriptive purposes.
+  - Ideal for:
+    - File or module-level documentation.
+    - Function descriptions and JSDoc annotations.
+    - Public API documentation.
+  - Follow JSDoc standards to provide clear type definitions, parameters, and
+  return values.
+
+- **Line Comments (// ...):**
+  - Used for brief in-line notes and temporary code exclusion.
+  - Best for:
+    - Debugging hints or explanations.
+    - Temporary comments during development.
+    - Short notes about specific implementation details.
+
+#### Example Usage:
+
+```javascript
+/**
+ * BLOCK COMMENT EXAMPLE (JSDoc Style)
+ * @summary Calculates the sum of two numbers
+ * @param {number} a First number to add
+ * @param {number} b Second number to add 
+ * @returns {number} The sum of `a` and `b`
+ */
+function sum(a, b) {
+  return a + b; // LINE COMMENT: Temporary debug during development
+}
+
+// Example of best practice for line comments:
+const PI = Math.PI; // Represents the mathematical constant π (pi)
+```
+
+#### Best Practices:
+- Use JSDoc for Public Interfaces:
+Document functions, classes, and modules with clear type annotations.
+- Keep Line Comments Concise:
+Limit to a maximum of 72 characters for readability.
+- Avoid Obvious Comments:
+No need to write i++ // increment i—the code is self-explanatory.
+Focus on "Why" Not "What":
+Comment on the reasoning behind decisions, not just what the code does.
+Remove Debugging Comments:
+Delete temporary comments before committing production code.
+
+#### Try it! :construction_worker:
+Open `./01-types/05-comments.js` and:
+
+1. Add JSDoc comments to a function
+2. Practice writing meaningful line comments
+3. Follow the best practices guidelines for commenting
+4. Remember, good comments make your code more understandable and maintainable
+now and in the future! :white_check_mark:
+
+#### :package: 6. Objects: Structure and Operations
+Objects in JavaScript provide a structured way to store and manage collections
+of related data. They encapsulate properties and methods, making code more
+organized and maintainable.
+
+Key Points:
+- Object Literals:
+
+  - Used to create objects directly using {} syntax.
+  - Ideal for grouping related data (e.g., character information).
+
+- Property Definition:
+
+  - Properties consist of keys (strings) and values (any type).
+  - Can be defined at creation or added later.
+
+- Accessing Properties:
+
+  - Dot Notation: object.property — Used for static property names.
+  - Bracket Notation: object["property"] — Useful for dynamic property names
+  based on variables or expressions.
+
+- Updating Properties:
+
+  - Direct assignment using dot notation is straightforward and preferred for
+  readability when the property name is known at write-time.
+
+- Deleting Properties:
+
+  - Use the delete operator to remove properties from an object. This affects
+  the object's structure and can impact code relying on the presence of that property.
+
+- Best Practices:
+
+  - Encapsulation: Group related data into objects to improve readability and
+  maintainability.
+  - Trailing Commas: Use trailing commas in object literals for easier
+  reorganization and addition/removal of properties without causing syntax
+  errors.
+  - Immutability: Consider using const for objects where no changes are
+  expected after creation. If modifications are necessary, create new objects
+  instead of mutating the existing one to avoid unintended side effects.
+
+#### Example Usage:
+```javascript
+// Creating an object with initial properties
+const character = {
+    name: "Ichigo",
+    anime: "Bleach",
+    age: 27
+};
+
+// Accessing properties using dot notation
+console.log(character.name); // Output: Ichigo
+
+// Updating a property using dot notation
+character.age = 15;
+
+// Accessing the same property using bracket notation (dynamic)
+const prop = 'age';
+console.log(character[prop]); // Output: 15
+
+// Deleting a property
+delete character.age; // Removes the age property from the object
+```
+#### Try it! :construction_worker:
+Open `./01-types/06-objects.js`, `07-objects-2.js`, `08-objects-3.js` and:
+
+1. Create an object representing a real-world entity (e.g., car, animal).
+2. Practice accessing, updating, and deleting properties using both dot and
+bracket notations.
+3. Experiment with object methods by adding functions to your objects.
+
+Remember, well-structured objects make code more readable and maintainable
+especially in larger applications! :white_check_mark:
+
+#### :package: 9. Arrays: Structure and Operations
+Arrays in JavaScript are a fundamental data structure used to store collections
+of related items. They provide dynamic resizing capabilities and efficient
+access to elements based on their indices.
+
+Key Points:
+- Array Declaration:
+  - Arrays can be declared using [] syntax for literals or the Array constructor.
+  - Literal syntax is preferred for its simplicity and readability.
+
+- Basic Operations:
+  - Access elements using index notation ([]).
+  - Add/remove elements using methods like push(), pop(), unshift(), and splice().
+
+- Dynamic Resizing:
+  - Arrays automatically resize when new elements are added beyond their current length.
+  - Be cautious of sparse arrays (empty slots), which can lead to unexpected behavior in loops.
+
+- Best Practices:
+  - Use array methods (push(), map(), etc.) for safe modifications.
+  - Avoid creating sparse arrays; use push() for appending elements.
+
+#### Try It! :construction_worker:
+Open `./01-types/09-arrays.js` and:
+
+1. Declare an empty array and add elements using both direct assignment and push().
+2. Practice accessing, updating, and deleting elements.
+3. Experiment with dynamic resizing by assigning values to higher indices.
+4. Use Array.isArray() to validate if variables are arrays.
+5. Explore array methods like map(), filter(), and reduce().
+
+Remember, effective use of arrays enhances code efficiency and readability
+especially in data manipulation tasks! :white_check_mark:
